@@ -12,6 +12,12 @@ export const Home = () => {
       document.getElementsByClassName('active')[0].classList.remove('active')
       e.target.classList.add('active')
     }
+    const mobileViewNav =(e)=>{
+      document.getElementById('navbar').classList.toggle('navbar-mobile')
+      e.target.classList.toggle('bi-x')
+      e.target.classList.toggle('bi-list')
+      
+    }
     return (
         <div>
              <header id="header" >
@@ -22,7 +28,7 @@ export const Home = () => {
       <!-- <a href="index.html" className="mr-auto"><img src="assets/img/logo.png" alt="" className="img-fluid"></a> --> */}
       <h2>I'm a passionate <span>MERN-STACK</span> Devloper from Indore (M.P) India</h2>
 
-      <nav id="navbar" className="navbar">
+      <nav id="navbar" className="navbar ">
         <ul>
         <li onClick={targetNavForCenter}><Link className="nav-link active" to="/Home">Home</Link></li>
           <li  onClick={targetNavForTop}><Link className="nav-link"  to="/About">About</Link></li>
@@ -31,7 +37,7 @@ export const Home = () => {
           <li onClick={targetNavForTop}><Link className="nav-link"  to="/Contact">Contact</Link></li>
          
         </ul>
-        <i className="bi bi-list mobile-nav-toggle"></i>
+        <i onClick={mobileViewNav} className="bi bi-list mobile-nav-toggle"></i>
       </nav>
 
       <div className="social-links">
